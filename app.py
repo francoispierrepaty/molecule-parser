@@ -3,7 +3,7 @@ from flask_restful import Api, Resource, reqparse
 #from flask_cors import CORS #comment this on deployment
 from api.MolecularParser import MolecularParser
 
-app = Flask(__name__, static_url_path='', static_folder='build')
+app = Flask(__name__, static_url_path='', static_folder='molecular-parser/build')
 #CORS(app) #comment this on deployment
 api = Api(app)
 
