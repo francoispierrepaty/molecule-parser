@@ -8,7 +8,7 @@ app = Flask(__name__, static_url_path='', static_folder=os.path.abspath('molecul
 CORS(app) #comment this on deployment
 api = Api(app)
 
-@app.route("/", defaults={'path':''})
+@app.route("/", methods=["GET"], defaults={'path':''})
 def serve(path):
     return send_from_directory(app.static_folder,'index.html')
 
