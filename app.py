@@ -4,7 +4,7 @@ from flask_cors import CORS #comment this on deployment
 from api.MolecularParser import MolecularParser
 import os
 
-app = Flask(__name__, static_url_path='', static_folder=os.path.abspath('molecular-parser/'))
+app = Flask(__name__, static_url_path='', static_folder=os.path.abspath('molecular-parser/build'))
 CORS(app) #comment this on deployment
 api = Api(app)
 
@@ -13,3 +13,6 @@ def serve(path):
     return send_from_directory(app.static_folder,'index.html')
 
 api.add_resource(MolecularParser, '/parser')
+
+if __name__ == '__main__':
+    app.run(use_reloader=True, port=5000, threaded=True)
