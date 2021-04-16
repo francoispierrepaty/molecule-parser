@@ -44,6 +44,7 @@ class MolecularParser(Resource):
         count = int(part)
       elif part in '([{':
         multipliers.pop()
+        count = 1
       elif part in ')]}':
         multipliers.append(multipliers[-1]*count)
         count = 1
