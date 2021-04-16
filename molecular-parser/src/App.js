@@ -17,7 +17,7 @@ class App extends React.Component {
 
     axios({
       method: 'post',
-      url: 'https://molecular-parser-joko.herokuapp.com/',
+      url: 'https://molecular-parser-joko.herokuapp.com',
       headers: {'content-type': 'application/json'},
       data: {
         formula: this.state.formula
@@ -32,7 +32,7 @@ class App extends React.Component {
     })
     .catch(error => {
       this.setState({
-        error: error
+        error: error.response
       });
     });
   }
