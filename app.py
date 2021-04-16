@@ -13,6 +13,3 @@ def serve(path):
     return send_from_directory(app.static_folder,'index.html')
 
 api.add_resource(MolecularParser, '/parser')
-
-if __name__ == '__main__':
-    app.run(use_reloader=True, port=5000, threaded=True)
